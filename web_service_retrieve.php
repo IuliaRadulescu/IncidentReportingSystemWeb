@@ -1,6 +1,6 @@
 <?php
 
-	require_once("mysql.php");
+	include "mysql.php";
 
 	$lat = $_POST["lat"];
 	$lng = $_POST["lng"];

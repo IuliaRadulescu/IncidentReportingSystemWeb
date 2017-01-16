@@ -3,10 +3,8 @@
 
 	<head>
 		<title>Incident Reporting System</title>
-		<meta charset="UTF-8">
-		<?php require_once("functions.php"); ?>
+		<?php include "functions.php"; ?>
 		<?php head(); ?>
-		<script src="js/mapScript.js"></script>
 	</head>
 
 

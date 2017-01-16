@@ -2,14 +2,9 @@
 <html>
 
 	<head>
-		<title>Incident Reporting System - Report an incident</title>
-		<meta charset="UTF-8">
-		<?php 
-		require_once("functions.php");
-		require_once("mysql.php"); ?>
+		<title>Incident Reporting System</title>
+		<?php include "functions.php"; include "mysql.php"; ?>
 		<?php head(); ?>
-		<script src="js/mapScript.js"></script>
-
 	</head>
 
 

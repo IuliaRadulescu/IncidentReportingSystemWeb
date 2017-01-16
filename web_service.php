@@ -1,6 +1,6 @@
 <?php
 
-	require_once("mysql.php");
+	include "mysql.php";
 
 	//preluam datele de la aplicatia Android in variabilele $_POST si $_FILE
 	$email = $_POST["email"];

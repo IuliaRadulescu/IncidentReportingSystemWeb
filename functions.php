@@ -6,10 +6,10 @@
 		define("BASE_URL", "http://localhost/incident_reporting_system/");
 
 		?>
-
+	<meta charset="UTF-8">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
-	<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.css">
 	<link rel="stylesheet" type="text/css" href="js/jquery-ui-1.11.0.custom/jquery-ui-1.11.0.custom/jquery-ui.css">
+	<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.css">
 	<script src="js/jquery-1.11.1.min.js"></script>
 	<script src="js/jquery-ui-1.11.0.custom/jquery-ui-1.11.0.custom/jquery-ui.js"></script>
 	<script src="bootstrap/js/bootstrap.js"></script>

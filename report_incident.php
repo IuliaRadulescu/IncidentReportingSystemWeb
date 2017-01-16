@@ -115,7 +115,18 @@
 						}
 
 						else
-							header("Location:".BASE_URL."report_incident.php?lat=".$lat."&lng=".$lng);
+							{
+
+								//trimit mail la admin
+
+								$headers =  'MIME-Version: 1.0' . "\r\n"; 
+								$headers .= 'From: Incident Reporting System <incident_reports@address.com>' . "\r\n";
+								$headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n"; 
+
+								mail("radulescuiuliamaria@yahoo.com", "A FOST RAPORTAT UN INCIDENT", "Adresa: ".$country." ".$city." ".$address." Tip incident: ".$type." Raportat la data de ".$date_reported." de catre ".$user_email, $headers);
+								header("Location:".BASE_URL."report_incident.php?lat=".$lat."&lng=".$lng);
+
+							}
 
 				} //de la else
 

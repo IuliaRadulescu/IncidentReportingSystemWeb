@@ -2,6 +2,9 @@
 
 
 	function head(){
+
+		define("BASE_URL", "http://localhost/incident_reporting_system/");
+
 		?>
 
 	<link rel="stylesheet" type="text/css" href="css/style.css">
@@ -29,15 +32,14 @@
 			<div class="container-fluid">
 
 				<div class="navbar-header">
-					<a class="navbar-brand" href="#">
+					<a class="navbar-brand" href="index.php">
 						<img alt="incindent-reporting-system" src="">
 					</a>
 				</div>
 
 				<ul class="nav navbar-nav navbar-right">
-					<li><a href="#">Map view</a></li>
-					<li><a href="#">List view</a></li>
-					<li><a href="#">Report an Incident</a></li>
+					<li><a href="list_view.php">List view</a></li>
+					<li><a href="report_incident.php">Report an Incident</a></li>
 				</ul>
 
 			</div>

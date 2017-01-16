@@ -34,9 +34,9 @@
 	</div>
 
 	<div class="jumbotron">
-	  <h1>Who we are?</h1>
-	  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis consectetur egestas tortor et lobortis. Fusce mauris ipsum, tempor id ante ut, feugiat efficitur dui. Aliquam ultricies dolor eget dui molestie vehicula. Donec a ullamcorper urna. Sed imperdiet, ipsum vitae aliquet bibendum, tortor odio pellentesque ante, a faucibus ex turpis eget felis. </p>
-	  <p><a class="btn btn-primary btn-lg" href="#" role="button">Add a Report</a></p>
+	  <h1>Make the world safer. Add a report.</h1>
+	  <p>Add a report to let everybody know if there's a fire or a pollution source. You can also use our <b><i>Android app</i></b> to submit a report whenever you observe something is wrong!</p>
+	  <p><a class="btn btn-primary btn-lg" href="report_incident.php" role="button">Add a Report</a></p>
 	</div>
 	
 	<div class="row row-map" id="map">
@@ -49,8 +49,8 @@
 
 	<div class="jumbotron">
 	  <h1>And there's more...</h1>
-	  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis consectetur egestas tortor et lobortis. Fusce mauris ipsum, tempor id ante ut, feugiat efficitur dui. Aliquam ultricies dolor eget dui molestie vehicula. Donec a ullamcorper urna. Sed imperdiet, ipsum vitae aliquet bibendum, tortor odio pellentesque ante, a faucibus ex turpis eget felis. </p>
-	  <p><a class="btn btn-primary btn-lg" href="#" role="button">View all reports</a></p>
+	  <p>View all the submited reports in List View or Map View.</p>
+	  <p><a class="btn btn-primary btn-lg" href="list_view" role="button">List view</a></p>
 	</div>
 
 	<?php footer(); ?>
@@ -62,7 +62,7 @@
 <script>
 
 function initMap() {
-  var myLatLng = {lat: -25.363, lng: 131.044};
+
 
   $.ajax({
 
@@ -71,29 +71,37 @@ function initMap() {
     data:{intializare:1},
     success:function(response){
 
-        var response = $.parseJSON(response);
-        console.log(response);
+        var responses_helper = response.split('*');
+        responses_helper = responses_helper.filter(function(n){ return n != "" }); //filtrez valori nule
 
-        var LatLngInit = new google.maps.LatLng(response[0].lat, response[0].lng);
+        var responses = new Array();
+        var k=0;
+        for(var i=0; i<responses_helper.length; i++){
+
+        	pieces = responses_helper[i].split('|');
+
+        	responses[k] = new Array(pieces[0], pieces[1], pieces[2]); //description, latitude, longitude
+        	k++;
+
+        }
+
+        var valoriCentru = new google.maps.LatLng(responses[0][1], responses[0][2]);
+        console.log(responses[0][1]+" "+responses[0][2]);
 
         var map = new google.maps.Map(document.getElementById('map'), {
           zoom: 4,
-          center: LatLngInit
+          center: valoriCentru
         });
 
-        for(var i=0; i<=response.length; i++){
-
-        	var LatLng = new google.maps.LatLng(response[i].lat, response[i].lng);
+      
+        for(var i=0; i<responses.length; i++){
 
         	var marker = new google.maps.Marker({
-	          position: LatLng,
+	          position: new google.maps.LatLng(responses[i][1], responses[i][2]),
 	          map: map,
-	          title: response[i].description
+	          title: responses[i][0] //descrierea
 	        });
-
-        } 
-
-        
+        }
 
         
 

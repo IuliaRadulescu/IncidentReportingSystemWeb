@@ -16,19 +16,19 @@
 
 	<!--imagine_faina-->
 
-	<div class="row header-row">
-		<div class="col-md-12 header">
+	<div class="row" style="height: 75%; position: relative;">
+	
 
-			<div class="col-md-12 title-container">
+			<div class="col-md-12 title-inner">
 
-				<div class="site-title">
+				<div class="title">
 					Information Reporting System<br>
 					<i>Take action. Build a better world.</i>
 				</div>
 
 			</div>
 
-		</div>
+		
 	</div>
 
 	<div class="jumbotron">

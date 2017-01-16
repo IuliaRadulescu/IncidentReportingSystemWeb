@@ -37,37 +37,28 @@ html, body{
 	font-size:12px;
 }
 
-.header-row{
 
-	height: 70%;
-	position: relative;
-}
-
-.header{
+.title-inner{
 
 	background: url('../images/header.jpeg');
 	height: 100%;
-	position: relative;
+
 
 }
 
-.title-container{
-
-	position: relative;
-	height: 100%;
-
-}
-
-.site-title{
+.title{
 
 	position: absolute;
 	top:50%;
 	transform: translateY(-50%);
+	
+	font-size:25px;
+
 	color:lightgray;
-	font-size:26px;
-	font-weight: bolder;
+	font-weight: bold;
 	text-align: center;
 	width:100%;
+
 }
 
 /*HARTA*/
